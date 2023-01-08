@@ -7,7 +7,7 @@ using System.Net;
 
 namespace Catalog.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
     {
@@ -57,15 +57,19 @@ namespace Catalog.API.Controllers
 
         // PUT api/<ProductController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Product product)
+        public async Task<IActionResult> Put(string id, [FromBody] Product product)
         {
+            var result = await _productRepository.UpdateProduct(id, product);
 
+            return Ok(result);
         }
 
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
+            var result = await _productRepository.DeleteProduct(id);
+            return Ok(result);
         }
     }
 }

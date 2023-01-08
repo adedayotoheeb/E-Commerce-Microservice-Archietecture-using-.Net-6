@@ -9,11 +9,11 @@ namespace Catalog.Api.Repository
     {
         Task<IEnumerable<Product>> GetProducts();
 
-        Task<IEnumerable> GetProductByName(string name);
+        Task<IEnumerable<Product>> GetProductByName(string name);
         Task<Product> GetProductById(string id);
         Task<IEnumerable<Product>> GetProductByCategory(string categoryName);
 
-        Task CreateProduct(Product product);
+        Task  CreateProduct(Product product);
         Task<bool> UpdateProduct(string id , Product product);
         Task<bool> DeleteProduct(string id);
 

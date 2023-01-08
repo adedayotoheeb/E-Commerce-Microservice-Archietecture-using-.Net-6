@@ -16,9 +16,12 @@ namespace Catalog.Api.Repository
         {
             _context = context;
         }
-        public async Task<Product> CreateProduct(Product product)
+       
+
+        public async Task CreateProduct(Product product)
         {
-            return await _context.Products.InsertOneAsync(product);
+             await _context.Products.InsertOneAsync(product);
+           
         }
 
         public async Task<bool> DeleteProduct(string id)
@@ -43,7 +46,7 @@ namespace Catalog.Api.Repository
 
         }
 
-        public async  Task<IEnumerable> GetProductByName(string name)
+        public async  Task<IEnumerable<Product>> GetProductByName(string name)
         {
             var result = await _context.Products.FindAsync(filterBuilder.ElemMatch(p => p.Name, name));
 
@@ -62,5 +65,7 @@ namespace Catalog.Api.Repository
             return result.IsAcknowledged && result.ModifiedCount >0;
 
         }
+
+      
     }
 }
