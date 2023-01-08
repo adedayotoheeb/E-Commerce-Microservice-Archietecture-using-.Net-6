@@ -1,0 +1,5 @@
+C:\Users\jvbea\OneDrive\Documents\Projects\Dotnet\Microservice with .Net6\Basket.API\obj\Debug\net6.0\Basket.API.csproj.AssemblyReference.cache
+C:\Users\jvbea\OneDrive\Documents\Projects\Dotnet\Microservice with .Net6\Basket.API\obj\Debug\net6.0\Basket.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jvbea\OneDrive\Documents\Projects\Dotnet\Microservice with .Net6\Basket.API\obj\Debug\net6.0\Basket.API.AssemblyInfoInputs.cache
+C:\Users\jvbea\OneDrive\Documents\Projects\Dotnet\Microservice with .Net6\Basket.API\obj\Debug\net6.0\Basket.API.AssemblyInfo.cs
+C:\Users\jvbea\OneDrive\Documents\Projects\Dotnet\Microservice with .Net6\Basket.API\obj\Debug\net6.0\Basket.API.csproj.CoreCompileInputs.cache
