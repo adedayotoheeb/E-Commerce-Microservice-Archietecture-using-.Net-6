@@ -1,6 +1,7 @@
 ﻿using Catalog.Api.Entities;
 using Catalog.Api.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Serilog.Core;
 using System.Net;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -13,9 +14,10 @@ namespace Catalog.API.Controllers
     {
         private readonly ILogger<ProductController> _logger;
         private readonly IProductRepository _productRepository;
-        public ProductController(Logger<ProductController> logger, IProductRepository productRepository)
+       
+        public ProductController(ILogger<ProductController> logger, IProductRepository productRepository)
         {
-                _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+                _logger = logger ;
                 _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
         }
         // GET: api/<ProductController>
@@ -37,7 +39,7 @@ namespace Catalog.API.Controllers
 
             if (product ==null)
             {
-                _logger.LogError($"Product with the given id {id} is not found");
+                
 
                 return NotFound($"Product with the given id {id} is not found");
             }
